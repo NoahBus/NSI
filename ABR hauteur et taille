@@ -1,0 +1,28 @@
+abr14=[14,[],[]]
+abr29=[29,[],[]]
+abr22=[22,abr14,abr29]
+abr35=[35,abr22,[44,[],[]]]
+abr56=[56,[],[]]
+abr80=[80,[],[]]
+abr76=[76,abr56,abr80]
+abr=[50,abr35,abr76]
+
+def taille(abr) :
+    if abr==[]:
+        return 0
+    elif abr[1]==[] and abr[2]==[]:
+        return 1
+    else:
+        return taille(abr[1]) + taille(abr[2]) + 1
+            
+print(taille(abr))
+
+def hauteur(abr) :
+    if abr==[]:
+        return -1
+    elif abr[1]==[] and abr[2]==[]:
+        return 1
+    else:
+        return max(hauteur(abr[1]), hauteur(abr[2])) + 1
+            
+print(hauteur(abr))
